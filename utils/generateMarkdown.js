@@ -18,6 +18,10 @@ function renderLicenseSection(license) {}
 //new line
 //#
 function generateMarkdown(data) {
+  let table = `## Table of Contents`;
+
+  
+  
   return `# ${data.title}
 
 ## this is a h1 
