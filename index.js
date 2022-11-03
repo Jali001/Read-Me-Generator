@@ -2,6 +2,7 @@
 //THIS HAS BEEN COMPLETE^^^^^^^
 const inquirer =  require ('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
+const fs = require ('fs');
 
 // TODO: Create an array of questions for user input
 const questions = 
@@ -33,8 +34,8 @@ const questions =
         type: "list",
         name: "license",
         message: "What license is being used for this project?",
-        choices: ["MIT","ISC","GNUPLv3"],
-        filter:(val)
+        choices: ["MIT",new inquirer.Separator(),"ISC",new inquirer.Separator(),"GNUPLv3"],
+        
     },
 
     {
