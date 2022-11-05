@@ -15,7 +15,7 @@ const questions =
     {
         type: "input",
         name: "description",
-        message: "What is the Project Title?",
+        message: "What is the description for the Project?",
     },
 
     {
@@ -67,14 +67,11 @@ const questions =
 // TODO: Create a function to write README file
 // data = user input
 // need fs 
-function writeToFile(fileName, data)
-{
-    fs.writeFile(fileName,data,err =>{
-        if(err) throw err;
-        console.log('README has been created!')
-    })
-
-}
+function writeToFile(fileName,data) {
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.log(err) : console.log(`Successfully created $(fileName)`)
+  ); 
+  }
 
 // TODO: Create a function to initialize app
 // this function will initial the app and ask the questions
@@ -85,8 +82,11 @@ function init()
  
  .then((data) =>{
     console.log(data);
-    writeToFile("README.md", generateMarkdown(data))
+    writeToFile("./dest/README.md", generateMarkdown(data))
  }
+
+ 
+
  )
 }
 
