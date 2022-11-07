@@ -68,7 +68,10 @@ const questions =
 // data = user input
 // need fs 
 function writeToFile(fileName,data) {
-    fs.writeFile(fileName, data, (err) =>
+    console.log(typeof data);
+    console.log(data)
+    console.log("*******");
+    fs.writeFile(fileName, data, { encoding: 'utf8' },  (err) =>
     err ? console.log(err) : console.log(`Successfully created $(fileName)`)
   ); 
   }

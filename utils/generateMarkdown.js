@@ -26,17 +26,17 @@ function renderLicenseLink(data)
 {
   if (data.license === `MIT` )
     {
-      return `https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT`;
+      return `[MIT](https://opensource.org/licenses/MIT)`;
     }
 
     if(data.license === `ISC`)
     {
-      return `https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC`;
+      return `[ISC](https://opensource.org/licenses/ISC)`;
     }
 
     if(data.license === `GNUPLv3`)
     {
-      return `https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0`;
+      return `[GNUPLv3](https://www.gnu.org/licenses/gpl-3.0)`;
     }
 
     return '';
@@ -71,53 +71,50 @@ function generateMarkdown(data) {
 
  
 
-  return 
-  `# ${data.title}  ${renderLicenseBadge(data)}
+  return `# ${data.title}  ${renderLicenseBadge(data)}
 
-  ## Description
-  ${data.description}
+## Description
+${data.description}
 
-  ## Table of Contents
+## Table of Contents
 
-  * [Installation](#Installation)
-  * [Usage](#Usage)
-  * [License](#license)
-  * [Contributing](#Contributing)
-  * [Tests](#Tests)
-  * [Questions](#Questions)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#license)
+* [Contributing](#Contributing)
+* [Tests](#Tests)
+* [Questions](#Questions)
 
-  ***
+***
 
-  ## Installation
+## Installation
 
-  ${data.install}
+${data.installation}
 
-  ## Usage
+## Usage
 
-  ${data.usage}
-
-  
-
-  ${renderLicenseSection(data)}
-
-  ## Test
-
-  ${data.test}
-
-  ## Contribute 
-
-  ${data.contribution}
-
-  ## Question
-
-  If you have any questions about the project you can reach out to me via email or GitHub with the information below. 
-
-  >Email: ${data.email} 
-  >GitHub : [${data.github}](https://github.com/${data.github})
+${data.usage}
 
 
+${renderLicenseSection(data)}
 
+## Tests
 
+${data.test}
+
+## Contributing 
+
+${data.contribution}
+
+## Questions
+
+If you have any questions about the project you can reach out to me via email or GitHub with the information below. 
+
+>Email: ${data.email} 
+
+&nbsp;
+
+>GitHub : [${data.github}](https://github.com/${data.github})
 `;
 }
 
